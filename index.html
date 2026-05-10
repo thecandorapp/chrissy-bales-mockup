@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chrissy Bales — Redesign Mockup</title>
+<meta name="description" content="Modern redesign concept for Chrissy Bales. Bespoke raw hair wig artistry, hand-crafted in London.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.5.0/dist/tabler-icons.min.css">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #1a1a1a;
+    background: #FAF8F5;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  .serif { font-family: 'Cormorant Garamond', Georgia, serif; }
+  .container { max-width: 1280px; margin: 0 auto; }
+  button { font-family: inherit; }
+  img { max-width: 100%; display: block; }
+
+  /* Announcement bar */
+  .announce {
+    background: #1a1a1a;
+    color: #d4d4d4;
+    font-size: 11px;
+    text-align: center;
+    padding: 10px 16px;
+    letter-spacing: 0.08em;
+  }
+
+  /* Header */
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 22px 40px;
+    background: #FAF8F5;
+    border-bottom: 0.5px solid rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .nav-left { display: flex; gap: 28px; font-size: 12px; letter-spacing: 0.1em; }
+  .nav-left span { cursor: pointer; }
+  .nav-left span:hover { opacity: 0.6; }
+  .logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    letter-spacing: 0.04em;
+    font-style: italic;
+  }
+  .nav-right { display: flex; gap: 20px; font-size: 18px; }
+  .nav-right i { cursor: pointer; }
+
+  /* Hero */
+  .hero {
+    position: relative;
+    min-height: 580px;
+    background: linear-gradient(135deg, #2b1810 0%, #4a2818 50%, #6b3a1f 100%);
+    display: flex;
+    align-items: center;
+    padding: 60px 80px;
+    overflow: hidden;
+  }
+  .hero-img {
+    position: absolute;
+    top: 0; right: 0;
+    width: 55%; height: 100%;
+    background-image: url('https://chrissybales.com/cdn/shop/files/Facetune_01-01-2025-13-52-34.jpg?v=1736085387&width=1646');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.85;
+  }
+  .hero-fade {
+    position: absolute;
+    top: 0; right: 0;
+    width: 55%; height: 100%;
+    background: linear-gradient(90deg, #2b1810 0%, transparent 40%);
+  }
+  .hero-content { position: relative; z-index: 2; max-width: 540px; color: #faf8f5; }
+  .eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: #d4a574;
+    margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 60px;
+    line-height: 1.05;
+    font-weight: 400;
+    margin-bottom: 22px;
+    letter-spacing: -0.01em;
+  }
+  .hero p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #c4b8a8;
+    margin-bottom: 36px;
+    max-width: 460px;
+  }
+  .btn-row { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn {
+    padding: 15px 30px;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    cursor: pointer;
+    border: none;
+    border-radius: 0;
+    transition: opacity 0.2s;
+  }
+  .btn:hover { opacity: 0.85; }
+  .btn-primary { background: #faf8f5; color: #1a1a1a; }
+  .btn-outline { background: transparent; color: #faf8f5; border: 1px solid #faf8f5; }
+  .btn-dark { background: #1a1a1a; color: #faf8f5; }
+  .btn-dark-outline { background: transparent; color: #1a1a1a; border: 1px solid #1a1a1a; }
+
+  /* Trust strip */
+  .trust {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background: #faf8f5;
+    border-bottom: 0.5px solid rgba(0,0,0,0.08);
+  }
+  .trust-item {
+    padding: 28px 24px;
+    text-align: center;
+    border-right: 0.5px solid rgba(0,0,0,0.08);
+  }
+  .trust-item:last-child { border-right: none; }
+  .trust-item i { font-size: 24px; color: #6b3a1f; }
+  .trust-title { font-size: 13px; font-weight: 500; margin-top: 10px; }
+  .trust-sub { font-size: 11px; color: #6b6b6b; margin-top: 4px; }
+
+  /* Section heads */
+  .section-head { padding: 80px 40px 40px; text-align: center; }
+  .section-head h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    letter-spacing: -0.01em;
+  }
+  .section-head p { font-size: 14px; color: #6b6b6b; }
+  .section-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: #6b3a1f;
+    margin-bottom: 14px;
+  }
+
+  /* Collections grid */
+  .collections {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 0 40px 80px;
+  }
+  .collection-card { cursor: pointer; transition: opacity 0.2s; }
+  .collection-card:hover { opacity: 0.85; }
+  .collection-img {
+    aspect-ratio: 3/4;
+    background-size: cover;
+    background-position: center;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+  }
+  .badge-new {
+    position: absolute;
+    bottom: 14px; left: 14px;
+    background: rgba(255,255,255,0.95);
+    padding: 5px 12px;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    border-radius: 2px;
+  }
+  .collection-info { padding: 16px 4px 0; }
+  .collection-name { font-family: 'Cormorant Garamond', serif; font-size: 20px; margin-bottom: 4px; }
+  .collection-desc { font-size: 12px; color: #6b6b6b; margin-bottom: 6px; }
+  .collection-price { font-size: 13px; font-weight: 500; }
+
+  /* Founder section */
+  .founder {
+    background: #f0ebe2;
+    padding: 90px 40px;
+  }
+  .founder-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .founder-img {
+    aspect-ratio: 4/5;
+    background-image: url('https://chrissybales.com/cdn/shop/products/IMG_4277-86ee3493.jpg?v=1689241573&width=1646');
+    background-size: cover;
+    background-position: center;
+    border-radius: 4px;
+  }
+  .founder h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px;
+    font-weight: 400;
+    line-height: 1.15;
+    margin-bottom: 24px;
+    letter-spacing: -0.01em;
+  }
+  .founder p { font-size: 15px; line-height: 1.75; color: #4a4a4a; margin-bottom: 16px; }
+  .founder-sig {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 18px;
+    margin: 24px 0;
+  }
+
+  /* Reviews */
+  .reviews { padding: 80px 40px; text-align: center; background: #faf8f5; }
+  .reviews-stars { color: #c89858; font-size: 14px; margin-bottom: 40px; }
+  .reviews-stars span { color: #6b6b6b; margin-left: 8px; }
+  .review-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .review-card {
+    background: #fff;
+    padding: 28px;
+    border-radius: 4px;
+    text-align: left;
+    border: 0.5px solid rgba(0,0,0,0.06);
+  }
+  .review-card .stars { color: #c89858; font-size: 14px; margin-bottom: 14px; }
+  .review-card blockquote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    line-height: 1.55;
+    color: #2a2a2a;
+    margin-bottom: 18px;
+    font-style: italic;
+  }
+  .review-author { font-size: 13px; font-weight: 500; }
+  .review-meta { font-size: 11px; color: #6b6b6b; }
+
+  /* Quiz CTA */
+  .quiz-cta {
+    padding: 80px 40px;
+    background: #f0ebe2;
+    text-align: center;
+  }
+  .quiz-cta h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 400;
+    margin-bottom: 14px;
+    letter-spacing: -0.01em;
+  }
+  .quiz-cta p {
+    font-size: 15px;
+    color: #6b6b6b;
+    max-width: 520px;
+    margin: 0 auto 32px;
+    line-height: 1.6;
+  }
+  .quiz-cta .btn-row { justify-content: center; }
+
+  /* Instagram */
+  .instagram { padding: 80px 40px; background: #faf8f5; }
+  .insta-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 28px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .insta-head h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 30px;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+  .insta-link {
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    border-bottom: 1px solid #1a1a1a;
+    padding-bottom: 2px;
+  }
+  .insta-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 8px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .insta-grid > div {
+    aspect-ratio: 1;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+  .insta-grid > div:hover { opacity: 0.85; }
+
+  /* Footer */
+  footer {
+    background: #1a1a1a;
+    color: #d4d4d4;
+    padding: 70px 40px 28px;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 50px;
+    margin-bottom: 50px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-style: italic;
+    color: #faf8f5;
+    margin-bottom: 18px;
+  }
+  footer p { font-size: 13px; line-height: 1.7; color: #9a9a9a; margin-bottom: 22px; }
+  .social-row { display: flex; gap: 16px; font-size: 18px; }
+  .footer-col-title { font-size: 11px; letter-spacing: 0.15em; color: #faf8f5; margin-bottom: 16px; }
+  .footer-col-list { font-size: 13px; line-height: 2; color: #9a9a9a; }
+  .footer-bottom {
+    border-top: 0.5px solid #333;
+    padding-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: #6b6b6b;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .header { padding: 16px 20px; }
+    .nav-left { display: none; }
+    .hero { padding: 40px 24px; min-height: 480px; }
+    .hero-img, .hero-fade { width: 100%; opacity: 0.4; }
+    .hero h1 { font-size: 38px; }
+    .hero p { color: #e4d8c8; }
+    .trust { grid-template-columns: repeat(2, 1fr); }
+    .trust-item:nth-child(2) { border-right: none; }
+    .collections, .review-grid { grid-template-columns: 1fr; padding-left: 20px; padding-right: 20px; }
+    .founder { padding: 60px 24px; }
+    .founder-grid { grid-template-columns: 1fr; gap: 30px; }
+    .founder h2 { font-size: 30px; }
+    .reviews, .quiz-cta, .instagram { padding: 60px 20px; }
+    .insta-grid { grid-template-columns: repeat(3, 1fr); }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 30px; }
+    .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+    .section-head { padding: 60px 20px 30px; }
+    .section-head h2 { font-size: 28px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="announce">FREE UK SHIPPING OVER £150 · WORLDWIDE DELIVERY · STUDIO IN ST JOHN'S WOOD, LONDON</div>
+
+<header class="header">
+  <nav class="nav-left">
+    <span>SHOP</span>
+    <span>SERVICES</span>
+    <span>LEARN</span>
+    <span>ABOUT</span>
+  </nav>
+  <div class="logo">Chrissy Bales</div>
+  <div class="nav-right">
+    <i class="ti ti-search" aria-label="Search"></i>
+    <i class="ti ti-user" aria-label="Account"></i>
+    <i class="ti ti-shopping-bag" aria-label="Cart"></i>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-img"></div>
+  <div class="hero-fade"></div>
+  <div class="hero-content">
+    <div class="eyebrow">SS25 · AWAKEN HER COLLECTION</div>
+    <h1>Raw hair wigs,<br>hand-crafted in London.</h1>
+    <p>Bespoke units made to last 5+ years. Custom-built in 4 weeks at our St John's Wood studio. Delivered globally.</p>
+    <div class="btn-row">
+      <button class="btn btn-primary">SHOP THE COLLECTION</button>
+      <button class="btn btn-outline">BOOK A CONSULTATION</button>
+    </div>
+  </div>
+</section>
+
+<section class="trust">
+  <div class="trust-item">
+    <i class="ti ti-clock" aria-hidden="true"></i>
+    <div class="trust-title">4-week craft time</div>
+    <div class="trust-sub">Hand-stitched to order</div>
+  </div>
+  <div class="trust-item">
+    <i class="ti ti-award" aria-hidden="true"></i>
+    <div class="trust-title">5+ year lifespan</div>
+    <div class="trust-sub">Premium raw hair only</div>
+  </div>
+  <div class="trust-item">
+    <i class="ti ti-world" aria-hidden="true"></i>
+    <div class="trust-title">Global delivery</div>
+    <div class="trust-sub">Tracked & insured</div>
+  </div>
+  <div class="trust-item">
+    <i class="ti ti-message-circle" aria-hidden="true"></i>
+    <div class="trust-title">WhatsApp support</div>
+    <div class="trust-sub">Mon–Fri, 10am–6pm</div>
+  </div>
+</section>
+
+<div class="section-head">
+  <div class="section-eyebrow">THE COLLECTIONS</div>
+  <h2>Curated by Chrissy</h2>
+  <p>Three signature lines, each crafted for a different woman.</p>
+</div>
+
+<section class="collections">
+  <div class="collection-card">
+    <div class="collection-img" style="background-image: url('https://chrissybales.com/cdn/shop/products/chrissysade-f5f1cb21.jpg?v=1689241481&width=1646');">
+      <div class="badge-new">NEW</div>
+    </div>
+    <div class="collection-info">
+      <div class="collection-name">SS25 Collection</div>
+      <div class="collection-desc">Awaken Her · 12 pieces</div>
+      <div class="collection-price">From £680</div>
+    </div>
+  </div>
+  <div class="collection-card">
+    <div class="collection-img" style="background-image: url('https://chrissybales.com/cdn/shop/products/POL-L-OMEY-eb569d71.jpg?v=1688566837&width=1646');"></div>
+    <div class="collection-info">
+      <div class="collection-name">The Classic</div>
+      <div class="collection-desc">Signature line · 18 pieces</div>
+      <div class="collection-price">From £540</div>
+    </div>
+  </div>
+  <div class="collection-card">
+    <div class="collection-img" style="background-image: url('https://chrissybales.com/cdn/shop/products/IMG_2297.jpg?v=1689241847&width=1646');"></div>
+    <div class="collection-info">
+      <div class="collection-name">Manuka Honey</div>
+      <div class="collection-desc">Honey-toned edit · 9 pieces</div>
+      <div class="collection-price">From £620</div>
+    </div>
+  </div>
+</section>
+
+<section class="founder">
+  <div class="founder-grid">
+    <div class="founder-img"></div>
+    <div>
+      <div class="section-eyebrow">MEET THE FOUNDER</div>
+      <h2>"A wig should feel like part of you, not on top of you."</h2>
+      <p>For 12 years I've crafted wigs by hand for women who refuse to compromise. Every unit is built in our London studio, from raw hair I personally source — never synthetic, never shortcuts.</p>
+      <p>My philosophy is simple: less, but better.</p>
+      <div class="founder-sig">— Chrissy Bales</div>
+      <button class="btn btn-dark">READ OUR STORY</button>
+    </div>
+  </div>
+</section>
+
+<section class="reviews">
+  <div class="section-eyebrow">CLIENT LOVE</div>
+  <h2 class="serif" style="font-size: 32px; font-weight: 400; margin-bottom: 10px;">Trusted by 2,400+ clients worldwide</h2>
+  <div class="reviews-stars">★★★★★ <span>4.9 average across 487 reviews</span></div>
+
+  <div class="review-grid">
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <blockquote>"My third unit from Chrissy. Three years on, the first one still looks brand new. Worth every penny."</blockquote>
+      <div class="review-author">Aisha O.</div>
+      <div class="review-meta">Verified · London</div>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <blockquote>"The consultation alone was worth it. She listened, didn't oversell, and the unit is undetectable."</blockquote>
+      <div class="review-author">Tomi A.</div>
+      <div class="review-meta">Verified · New York</div>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <blockquote>"I flew in from Lagos for the consultation. Best decision. The craftsmanship is on another level."</blockquote>
+      <div class="review-author">Funmi B.</div>
+      <div class="review-meta">Verified · Lagos</div>
+    </div>
+  </div>
+</section>
+
+<section class="quiz-cta">
+  <div class="section-eyebrow">FIND YOUR MATCH</div>
+  <h2>Not sure where to start?</h2>
+  <p>Take our 60-second style quiz and get a personalised unit recommendation, or book a 1:1 consultation with Chrissy.</p>
+  <div class="btn-row">
+    <button class="btn btn-dark">TAKE THE QUIZ</button>
+    <button class="btn btn-dark-outline">BOOK CONSULTATION</button>
+  </div>
+</section>
+
+<section class="instagram">
+  <div class="insta-head">
+    <div>
+      <div class="section-eyebrow">@CHRISSYBALES</div>
+      <h2>As seen on Instagram</h2>
+    </div>
+    <div class="insta-link">FOLLOW US →</div>
+  </div>
+  <div class="insta-grid">
+    <div style="background-image: url('https://chrissybales.com/cdn/shop/files/Facetune_01-01-2025-13-52-34.jpg?v=1736085387&width=1646');"></div>
+    <div style="background-image: url('https://chrissybales.com/cdn/shop/products/chrissysade-f5f1cb21.jpg?v=1689241481&width=1646');"></div>
+    <div style="background-image: url('https://chrissybales.com/cdn/shop/products/IMG_2297.jpg?v=1689241847&width=1646');"></div>
+    <div style="background-image: url('https://chrissybales.com/cdn/shop/products/POL-L-OMEY-eb569d71.jpg?v=1688566837&width=1646');"></div>
+    <div style="background-image: url('https://chrissybales.com/cdn/shop/products/IMG_4277-86ee3493.jpg?v=1689241573&width=1646');"></div>
+    <div style="background-image: url('https://chrissybales.com/cdn/shop/files/Facetune_01-01-2025-13-52-34.jpg?v=1736085387&width=1646');"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo">Chrissy Bales</div>
+      <p>3 Nugent Terrace, London NW8 9QB<br>Studio visits by appointment only.</p>
+      <div class="social-row">
+        <i class="ti ti-brand-instagram" aria-label="Instagram"></i>
+        <i class="ti ti-brand-tiktok" aria-label="TikTok"></i>
+        <i class="ti ti-brand-youtube" aria-label="YouTube"></i>
+        <i class="ti ti-brand-x" aria-label="X"></i>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">SHOP</div>
+      <div class="footer-col-list">Wigs<br>Bundles<br>Accessories<br>Gift Cards</div>
+    </div>
+    <div>
+      <div class="footer-col-title">SERVICES</div>
+      <div class="footer-col-list">Consultations<br>Wig Care<br>Masterclasses<br>E-Learning</div>
+    </div>
+    <div>
+      <div class="footer-col-title">SUPPORT</div>
+      <div class="footer-col-list">FAQs<br>Shipping<br>Returns<br>Contact</div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2026 Chrissy Bales Ltd · Made with care in London</div>
+    <div>Privacy · Terms · Cookies</div>
+  </div>
+</footer>
+
+</body>
+</html>
